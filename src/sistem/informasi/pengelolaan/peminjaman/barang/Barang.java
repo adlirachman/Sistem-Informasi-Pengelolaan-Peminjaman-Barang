@@ -12,7 +12,7 @@ package sistem.informasi.pengelolaan.peminjaman.barang;
 public class Barang {
     private String nama;
     private int jumlah;
-    private String kode;
+    private String status;
 
     public String getNama() {
         return nama;
@@ -28,15 +28,5 @@ public class Barang {
 
     public void setJumlah(int jumlah) {
         this.jumlah = jumlah;
-    }
-
-    public String getKode() {
-        return kode;
-    }
-
-    public void setKode(String kode) {
-        this.kode = kode;
-    }
-    
-    
+    } 
 }

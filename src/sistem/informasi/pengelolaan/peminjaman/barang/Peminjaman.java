@@ -10,5 +10,7 @@ package sistem.informasi.pengelolaan.peminjaman.barang;
  * @author Adli Rachman
  */
 public class Peminjaman {
-    
+    private Barang[] pinjaman;
+    private Anggota peminjam;
+    private String status;
 }

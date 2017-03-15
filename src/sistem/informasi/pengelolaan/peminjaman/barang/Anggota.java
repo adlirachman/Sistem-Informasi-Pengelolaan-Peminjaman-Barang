@@ -67,7 +67,6 @@ public class Anggota extends Orang{
         riwayatPinjaman[id] = null;
     }
     
-    @Override
     public String toString(){
         String nama = "Nama Anggota = " + super.getNama();
         String noanggota = "Nomor Anggota = " + this.noAnggota;

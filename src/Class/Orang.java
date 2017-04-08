@@ -1,4 +1,4 @@
-package sistem.informasi.pengelolaan.peminjaman.barang;
+package Class;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,7 +10,7 @@ package sistem.informasi.pengelolaan.peminjaman.barang;
  *
  * @author Adli Rachman
  */
-public class Orang {
+public abstract class Orang {
     private String nama;
     private String alamat;
     

@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sistem.informasi.pengelolaan.peminjaman.barang;
+package Class;
+import java.util.*;
 
 /**
  *
@@ -11,12 +12,13 @@ package sistem.informasi.pengelolaan.peminjaman.barang;
  */
 public class Anggota extends Orang{
     private String noAnggota;
-    private Peminjaman[] riwayatPinjaman;
+    private ArrayList<Peminjaman> riwayatPinjaman = new ArrayList<>();
+    private Peminjaman p;
     
     public Anggota(String nama, String alamat, String noAnggota){
         super(nama, alamat);
         this.noAnggota = noAnggota;
-        riwayatPinjaman = new Peminjaman[20]; // Max data di riwayatPeminjaman = 20
+        
     }
 
     public String getNoAnggota() {
@@ -45,28 +47,28 @@ public class Anggota extends Orang{
     
     // create pinjaman dan kembalikan pinjaman
     
-    public void createPinjaman(String date){
-        Peminjaman p = new Peminjaman();
-        p.setTglPinjam(date);
-        
-        for(int i = 0; i <= riwayatPinjaman.length; i++){
-            if(riwayatPinjaman[i] == null){
-                riwayatPinjaman[i] = p;
-                break;
-            }
+    public void addPinjaman(Peminjaman e){
+        riwayatPinjaman.add(e);
+    }  
+      
+    public void kembalikan(Peminjaman e,String date){
+//        if(riwayatPinjaman.isEmpty()){
+//            riwayatPinjaman.remove(id); //cek array list
+//        }
+        e.setStatus("Dikembalikan");
+        e.setDate(date);
+    }
+    
+    public void tampilAnggota(){
+        System.out.println("Nama: "+super.getNama());
+        System.out.println("Alamat: "+super.getAlamat());
+        System.out.println("No Anggota: "+noAnggota);
+        System.out.println("Kode Peminjaman: ");
+        for(Peminjaman e: riwayatPinjaman){
+            System.out.println(e.getIdPinjam()+" : "+e.getStatus()+" pada tanggal "+e.getDate());
         }
     }
-    
-    public void addBarangToPinjaman(int id, Barang b){
-        if(riwayatPinjaman[id] != null){
-            riwayatPinjaman[id].addPinjaman(b);
-        }
-    }
-    
-    public void kembalikan(int id){
-        riwayatPinjaman[id] = null;
-    }
-    
+    @Override
     public String toString(){
         String nama = "Nama Anggota = " + super.getNama();
         String noanggota = "Nomor Anggota = " + this.noAnggota;

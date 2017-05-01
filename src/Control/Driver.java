@@ -5,11 +5,12 @@
  */
 package Control;
 
+import Model.Petugas;
+import Model.Orang;
 import java.util.*;
-import Class.Anggota;
-import Class.Barang;
-import Class.Peminjaman;
-import Class.*;
+import Model.Anggota;
+import Model.Barang;
+import Model.Peminjaman;
 
 /**
  *
@@ -17,6 +18,8 @@ import Class.*;
  */
 public class Driver {
     private ArrayList<Orang> listAnggota = new ArrayList<>();
+    private ArrayList<Peminjaman> listPeminjaman = new ArrayList<>();
+    private ArrayList<Peminjaman> listPengembalian = new ArrayList<>();
     
     /**
      * @param args the command line arguments
@@ -50,7 +53,7 @@ public class Driver {
         
         
         a1.kembalikan(pin1,"9 April 2017");
-        a1.tampilAnggota();
+        
         pin1.tampilPinjaman();
     }
     

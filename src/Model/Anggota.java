@@ -21,6 +21,10 @@ public class Anggota extends Orang{
         
     }
 
+    public void setNoAnggota(String noAnggota){
+        this.noAnggota = noAnggota;
+    }
+    
     public String getNoAnggota() {
         return noAnggota;
     }

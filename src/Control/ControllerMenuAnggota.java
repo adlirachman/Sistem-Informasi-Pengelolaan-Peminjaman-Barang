@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Model.AplikasiConsole;
 import Model.*;
 import View.*;
 import java.awt.event.ActionEvent;
@@ -16,12 +17,12 @@ import java.util.ArrayList;
  * @author Adli Rachman
  */
 public class ControllerMenuAnggota implements ActionListener {
-    Aplikasi model;
+    AplikasiConsole model;
     menuAnggota view;
     ArrayList<Anggota> listAnggota = null;
     Anggota ang = null;
     
-    public ControllerMenuAnggota(Anggota ang,Aplikasi model) {
+    public ControllerMenuAnggota(Anggota ang,AplikasiConsole model) {
         this.model = model;
         view = new menuAnggota();
         view.setVisible(true);
@@ -33,7 +34,7 @@ public class ControllerMenuAnggota implements ActionListener {
         
     }
     
-    public ControllerMenuAnggota(Aplikasi model){
+    public ControllerMenuAnggota(AplikasiConsole model){
         this.model = model;
         view = new menuAnggota();
         view.setVisible(true);

@@ -9,17 +9,18 @@ import Model.Peminjaman;
 import Model.Anggota;
 import Model.Barang;
 import Model.Petugas;
+import java.io.IOException;
 import java.util.*;
 /**
  *
  * @author Adli Rachman
  */
 public class Aplikasi {
-    private ArrayList<Peminjaman> listPeminjaman = null;
-    private ArrayList<Anggota> listAnggota = null;
-    private ArrayList<Barang> listBarang = null;
-    private ArrayList<Petugas> listPetugas = null;
-    private ArrayList<Peminjaman> listPengembalian = null;
+    private ArrayList<Peminjaman> listPeminjaman;
+    private ArrayList<Anggota> listAnggota;
+    private ArrayList<Barang> listBarang;
+    private ArrayList<Petugas> listPetugas;
+    private ArrayList<Peminjaman> listPengembalian;
     
     
     public Aplikasi(){
@@ -31,17 +32,18 @@ public class Aplikasi {
     }
     
     //Anggota
-    public void addAnggota(Anggota a){
-        listAnggota.add(a);
+    public void addAnggota(String nama,String alamat,String id){
+        listAnggota.add(new Anggota(nama, alamat, nama));
+        
     }
     
     public void removeAnggota(Anggota a){
         listAnggota.remove(a);
     }
     
-    public Anggota getIdAnggota(int id){
-        return listAnggota.get(id);
-    }
+//    public Anggota getIdAnggota(String id){
+//        return listAnggota.contains(id);
+//    }
     
 //    public Anggota getAnggota(String no){
 //        for (Anggota : listAnggota){
@@ -64,12 +66,18 @@ public class Aplikasi {
     }
     
     //Peminjaman
-    public void addPeminjaman(Peminjaman pe){
-        listPeminjaman.add(pe);
+    public void addPeminjaman(String idPinjam, String peminjam, String date){
+        listPeminjaman.add(new Peminjaman(idPinjam,peminjam,date));
     }
     
     public void removePeminjaman(Peminjaman pe){
         listPeminjaman.remove(pe);
+    }
+    
+    public void listPeminjaman(){
+        for(Peminjaman p : listPeminjaman){
+            p.tampilPinjaman();
+        }
     }
     
     //Pengembalian
@@ -78,12 +86,18 @@ public class Aplikasi {
     }
     
     //Barang
-    public void addBarang(Barang b){
-        listBarang.add(b);
+    public void addBarang(String namaBarang,String nomorBarang,int qty){
+        listBarang.add(new Barang(namaBarang,qty,nomorBarang));
     }
     
     public void removeBarang(Barang b){
         listBarang.remove(b);
+    }
+    
+    public void listBarang(){
+        for(Barang b : listBarang){
+            b.tampilBarang();
+        }
     }
     
     

@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Model.AplikasiConsole;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Model.*;
@@ -16,7 +17,7 @@ import View.*;
  */
 public class ControllerMainMenu implements ActionListener{
 
-    Aplikasi model;
+    AplikasiConsole model;
     MainMenu view;
     Anggota ang = null;
     Peminjaman pem = null;
@@ -26,7 +27,7 @@ public class ControllerMainMenu implements ActionListener{
         view = new MainMenu();
         view.setVisible(true);
         view.addListener(this);
-        model = new Aplikasi();
+        model = new AplikasiConsole();
         view.setTitle("Sistem Peminjaman Barang");
         
         

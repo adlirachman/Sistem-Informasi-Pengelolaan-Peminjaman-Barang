@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Model.AplikasiConsole;
 import Model.*;
 import View.*;
 import java.awt.event.ActionEvent;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
  * @author Adli Rachman
  */
 public class ControllerMenuPeminjaman implements ActionListener{
-    Aplikasi model;
+    AplikasiConsole model;
     menuPeminjaman view;
     ArrayList<Peminjaman> listPeminjaman = null;
     Peminjaman pem = null;
@@ -30,7 +31,7 @@ public class ControllerMenuPeminjaman implements ActionListener{
         view.setTitle("Menu Peminjaman dan Pengembalian");
     }
     
-    public ControllerMenuPeminjaman(Aplikasi model) {
+    public ControllerMenuPeminjaman(AplikasiConsole model) {
         this.model = model;
         view = new menuPeminjaman();
         view.setVisible(true);
@@ -39,7 +40,7 @@ public class ControllerMenuPeminjaman implements ActionListener{
         view.setTitle("Menu Peminjaman dan Pengembalian");
     }
     
-    public ControllerMenuPeminjaman(Peminjaman pem, Aplikasi model) {
+    public ControllerMenuPeminjaman(Peminjaman pem, AplikasiConsole model) {
         this.model = model;
         view = new menuPeminjaman();
         view.setVisible(true);

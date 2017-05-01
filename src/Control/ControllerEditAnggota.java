@@ -24,7 +24,7 @@ public class ControllerEditAnggota implements ActionListener{
     Anggota ang = null;
     
     public ControllerEditAnggota(Anggota ang, Aplikasi model) {
-        this.model = model;
+        model = new Aplikasi();
         view = new editAnggota();
         view.setVisible(true);
         view.addListener(this);
@@ -46,7 +46,10 @@ public class ControllerEditAnggota implements ActionListener{
 
         Object obj = e.getSource();
         if(obj.equals(view.getBtnCari())){
-            
+//            for(int i = 0; i<= model.)
+//            if(model.getIdAnggota(0) == ){
+//                
+//            }
         }
         else if(obj.equals(view.getBtnSimpan())){
             

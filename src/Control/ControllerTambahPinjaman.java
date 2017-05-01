@@ -5,25 +5,29 @@
  */
 package Control;
 
+import Model.AplikasiConsole;
 import Model.*;
 import View.tambahPeminjaman;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Adli Rachman
  */
 public class ControllerTambahPinjaman implements ActionListener{
-    Aplikasi Model;
+    Aplikasi model;
     tambahPeminjaman view;
     Barang bar;
     Anggota ang;
-    Petugas pet;
+    String pet;
     ArrayList<Barang> listBarang = null;
+    String id,nama,tanggal;
 
     public ControllerTambahPinjaman() {
+        model = new Aplikasi();
         view = new tambahPeminjaman();
         view.setVisible(true);
         view.addListener(this);
@@ -33,8 +37,22 @@ public class ControllerTambahPinjaman implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         Object obj = e.getSource();
+        id = view.getIDPinjam();
+        nama = view.getNamaPeminjam();
+        tanggal = view.getTanggalPinjam();
+        
         if(obj.equals(view.getBtnDone())){
-            
+            if(id.equals("") && nama.equals("") && tanggal.equals("")){
+                JOptionPane.showMessageDialog(view, "Data masih kosong", "Data kosong", 0);
+
+            }else{
+                try{
+                    model.addPeminjaman(id,nama,tanggal);
+                    JOptionPane.showMessageDialog(view, "Data berhasil diinput", "Berhasil", 1);
+                }catch (Exception ex){
+                    JOptionPane.showMessageDialog(view, "Terjadi kesalahan", "Kesalahan", 0);
+                }
+            }
         }
         else if(obj.equals(view.getBtnTambah())){
             

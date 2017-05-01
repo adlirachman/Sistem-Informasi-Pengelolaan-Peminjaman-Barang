@@ -5,6 +5,7 @@
  */
 package View;
 
+import Model.Anggota;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
@@ -44,9 +45,12 @@ public class tambahAnggota extends javax.swing.JFrame {
     public void addListener(ActionListener e){
         btnAdd.addActionListener(e);
         btnKembali.addActionListener(e);
-        txId.addActionListener(e);
-        txNama.addActionListener(e);
-        txAlamat.addActionListener(e);
+    }
+    
+    public void reset(){
+        txAlamat.setText("");
+        txNama.setText("");
+        txId.setText("");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -83,6 +87,11 @@ public class tambahAnggota extends javax.swing.JFrame {
         jLabel5.setText("ID Anggota");
 
         btnAdd.setText("Tambah");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnKembali.setText("Kembali");
 
@@ -157,6 +166,16 @@ public class tambahAnggota extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+//        String nama = null, alamat = null, nim = null;
+//        Anggota ang = new Anggota(nama,alamat,nim);
+//        ang.setNama(nama);
+//        ang.setAlamat(alamat);
+//        ang.setNoAnggota(nim);
+//        
+//        reset();
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments

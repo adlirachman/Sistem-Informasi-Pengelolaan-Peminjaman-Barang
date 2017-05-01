@@ -5,6 +5,7 @@
  */
 package Control;
 
+import Model.AplikasiConsole;
 import Model.*;
 import View.*;
 import java.awt.event.ActionEvent;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
  */
 public class ControllerMenuBarang implements ActionListener {
 
-    Aplikasi model;
+    AplikasiConsole model;
     menuBarang view;
     ArrayList<Barang> listBarang = null;
     Barang bar = null;
@@ -31,7 +32,7 @@ public class ControllerMenuBarang implements ActionListener {
         view.setTitle("Menu Barang");
     }
     
-    public ControllerMenuBarang(Barang bar,Aplikasi Model) {
+    public ControllerMenuBarang(Barang bar,AplikasiConsole Model) {
         this.model = model;
         view = new menuBarang();
         view.setVisible(true);
@@ -40,7 +41,7 @@ public class ControllerMenuBarang implements ActionListener {
         view.setTitle("Menu Barang");
     }
     
-    public ControllerMenuBarang(Aplikasi Model) {
+    public ControllerMenuBarang(AplikasiConsole Model) {
         this.model = model;
         view = new menuBarang();
         view.setVisible(true);

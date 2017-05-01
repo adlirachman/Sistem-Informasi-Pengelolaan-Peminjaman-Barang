@@ -7,7 +7,7 @@ import java.util.*;
 public class Peminjaman {
     private ArrayList<Barang> pinjaman = new ArrayList<>();
     private ArrayList<Integer> jmlBarang = new ArrayList<>();
-    private Anggota peminjam;
+    private String peminjam;
     private Petugas petugas;
     private String status;
     private String date;
@@ -17,13 +17,21 @@ public class Peminjaman {
  
    
 
-    public Peminjaman(String idPinjam, Anggota peminjam, String status, String date,Petugas petugas) {
+    public Peminjaman(String idPinjam, String peminjam, String date,Petugas petugas) {
         this.idPinjam = idPinjam;
         this.peminjam = peminjam;
-        this.status = status;
+        this.status = "Pinjam";
         this.date = date;
         this.petugas = petugas;
     }
+
+    public Peminjaman(String idPinjam, String peminjam, String date) {
+        this.peminjam = peminjam;
+        this.status = "Pinjam";
+        this.date = date;
+        this.idPinjam = idPinjam;
+    }
+    
 
     public Petugas getPetugas() {
         return petugas;
@@ -76,11 +84,11 @@ public class Peminjaman {
     }
     
 
-    public Anggota getPeminjam() {
+    public String getPeminjam() {
         return peminjam;
     }
 
-    public void setPeminjam(Anggota peminjam) {
+    public void setPeminjam(String peminjam) {
         this.peminjam = peminjam;
     }
 
